@@ -29,6 +29,9 @@ def registration(request):
         user_name = request.POST.get('name')
         user_phone = request.POST.get('phone')
         user_email = request.POST.get('email')
+        user_password = request.POST.get('password')
+        user_gender = request.POST.get('gender')
+        user_fbLink = request.POST.get('fbLink')
         
         try:
             # গুগল শিটের সাথে কানেক্ট হওয়া
@@ -42,7 +45,7 @@ def registration(request):
                 messages.error(request, f"ফোন নম্বর {user_phone} দিয়ে আগেই রেজিস্ট্রেশন করা আছে। দয়া করে লগইন করুন!")
             else:
                 # যদি নতুন ইউজার হয়, শিটে ডাটা অ্যাড করা
-                new_data = [user_name, user_phone, user_email]
+                new_data = [user_name, user_phone, user_password, user_gender,  user_email, user_fbLink]
                 sheet.append_row(new_data)
                 messages.success(request, "অভিনন্দন! আপনার রেজিস্ট্রেশন সফলভাবে সম্পন্ন হয়েছে।")
         
@@ -50,10 +53,10 @@ def registration(request):
             # কোনো এরর হলে (যেমন ইন্টারনেট সমস্যা বা ফাইল পাথ ভুল হলে)
             print(f"Error: {e}")
             messages.error(request, "সার্ভারে সমস্যা হয়েছে। দয়া করে কিছুক্ষণ পর আবার চেষ্টা করুন।")
+            
 
         # কাজ শেষ হলে একই পেজে রিডাইরেক্ট করবে
-        return redirect('/login')
-    
+        # return redirect('/login')
     return render(request, 'registration.html')
 
 
