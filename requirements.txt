@@ -1,0 +1,4 @@
+django
+gspread
+oauth2client
+gunicorn

@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %} Home | SACH {% endblock title %} 
+{%block body %}
+<div class="container container-fluid mt-5 p-5">
+  <h1 class="text-center">আপনার শেখার যাত্রা শুরু হোক এখান থেকেই</h1>
+  <p class="text-center">সেরা ইন্সট্রাক্টরদের কাছ থেকে আধুনিক কোর্সগুলো শিখুন নিজের সুবিধামতো সময়ে। <br> আমাদের ইন্টারেক্টিভ প্ল্যাটফর্মে আপনাকে স্বাগতম।</P>
+  <div class="d-flex justify-content-center gap-3">
+    <a class="btn btn-primary m-2 fs-5" href="login" role="button">Login</a>
+    <a class="btn btn-primary m-2 fs-5" href="/registration" role="button">Registration</a>
+  </div>
+  <hr class="p-3 mt-4">
+  <div class="d-flex justify-content-center gap-3">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://scontent.fdac157-1.fna.fbcdn.net/v/t39.30808-6/524296821_1324401079689299_3461911885411560146_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=LcVM2QTM97MQ7kNvwFRtrov&_nc_oc=Adn7-29H109rKbXNtUSyimLaNs7s6wzabaSWUhgk8Swh_727ciarTWtDBc4KFK7zdT8&_nc_zt=23&_nc_ht=scontent.fdac157-1.fna&_nc_gid=F7qRQlbVNASXMcRqtClNSQ&oh=00_AfvDW0gZZwIZquWqwjNKeLmeODjMePy3iDWwWhq6VHz1fg&oe=698DFFC3" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Math Foundation Course</h5>
+          <p class="card-text">
+            কোর্স ফি ৪৫% ছাড়ে ৫৫০ টাকা
+            <br>
+            ✨ একবার ভর্তি = চাকরি না পাওয়া পর্যন্ত লাইফটাইম সাপোর্ট
+            ✨ বেসিক থেকে ধাপে ধাপে শেখানো হবে
+            ✨ প্রতিটি ক্লাসের রেকর্ড যে কোনো সময় দেখা যাবে ইনশাআল্লাহ।
+          </p>
+          <a href="/math-foundation-course" class="btn btn-primary">বিস্তারিত দেখুন</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

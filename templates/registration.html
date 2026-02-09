@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %} Registration | SACH {% endblock title %}
+{% block body %}
+<div class="container container-fluid mt-5 p-5">
+    <form method="post" action="/registration">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="password" id="Password" placeholder="Enter a strong password">
+        </div>
+        <div class="form-group">
+            <label for="fullName">Your Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your full name..">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Phone Number</label>
+            <input type="phone" class="form-control" name="phone" id="phoneNumber" aria-describedby="phoneNumberHelp" placeholder="Your phone number">
+            <small id="phoneNumberHelp" class="form-text text-muted fs-6">Your phone number will be your unique ID so be careful.</small>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% if messages %}
+    {% for message in messages %}
+        <script>
+            Swal.fire({
+                icon: "{% if message.tags == 'error' %}error{% else %}success{% endif %}",
+                title: "{{ message }}",
+                showConfirmButton: true,
+                timer: 4000
+            });
+        </script>
+    {% endfor %}
+{% endif %}
+{% endblock body %}
