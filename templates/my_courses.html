@@ -1,6 +1,20 @@
 {% extends "base.html" %}
-{% block title %} Math Foundation Course | SACH {% endblock title %}
+{% block title %} MY Courses | SACH {% endblock title %}
 {% block body %}
-<div class="container container-fluid mt-5 p-5">
+<div class="container container-fluid mt-5 pt-5 vh-100">
+    <div class="card shadow p-4 text-center">
+        <h2 class="mb-4">আপনার ড্যাশবোর্ড</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="border p-3 bg-light">
+                    <h5>আপনার কোর্স: <strong>{{ user.Course }}</strong></h5>
+                    <p>সেশন: <strong>{{ user.Session }}</strong></p>
+                    <a href="#" class="btn btn-primary">ক্লাস শুরু করুন</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <a href="/logout" class="btn btn-outline-danger">লগআউট</a>
+    </div>
 </div>
 {% endblock body %}
